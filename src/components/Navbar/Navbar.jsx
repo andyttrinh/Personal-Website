@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MenuItems } from './MenuItem'
+import Button from "../Button/Button"
 import './Navbar.css'
 
 function Navbar() {
@@ -22,6 +23,7 @@ function Navbar() {
                     )
                 })}
             </ul>
+            <Button>Contact</Button>
         </nav>
     )
 }

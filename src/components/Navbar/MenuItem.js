@@ -10,12 +10,12 @@ export const MenuItems = [
         cName: 'nav-links'
     },
     {
-        title: '日本語',
+        title: 'Projects',
         url: "#",
         cName: 'nav-links'
     },
     {
-        title: 'Contact',
+        title: '日本語',
         url: "#",
         cName: 'nav-links'
     }
