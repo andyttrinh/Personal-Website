@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react'
-import { TweenMax, TimelineLite, Power3 } from 'gsap';
+import gsap, { Power3 } from 'gsap';
 import './Hero.scss'
 
 import arrow from '../../images/arrow-right.svg'
@@ -8,25 +8,51 @@ import image2 from '../../images/boy.webp'
 
 
 function Hero() {
+    // Reference for DOM Elements
     let hero = useRef(null);
     let images = useRef(null);
+    let content = useRef(null);
 
-    let tl = new TimelineLite()
+    let t1 = gsap.timeline({delay: .7});
 
     useEffect(() => {
+        gsap.to(hero, {duration: 0, css: {visibility: 'visible'}})
+
+        // Animation For Contents
+        const headlineFirst = content.children[0].children[0]; // returns first div of h1
+        const headlineSecond = headlineFirst.nextSibling;
+        const headlineThird = headlineSecond.nextSibling;
+        const contentP = content.children[1];
+        const contentButton = content.children[2];
+
+        t1.from([headlineFirst.children, headlineSecond.children, headlineThird.children], {
+            duration: 1,
+            y: 44, 
+            ease: Power3.easeOut, 
+            delay: .8,
+            stagger: .15}, 'start') // 'Start' just means that the two timelines run at the same time, it can be anything
+            .from(contentP, {duration: 1, y: 20, opacity: 0, ease: Power3.easeOut}, 1.4)
+            .from(contentButton, {duration: 1, y: 20, opacity: 0, ease: Power3.easeOut}, 1.4);
+
+        // Animation For Images
         const image1 = images.firstElementChild;
         const image2 = images.lastElementChild;
 
-        TweenMax.to(hero, 0, {css: {visibility: 'visible'}})
-        console.log(image1, image2);
-    })
+        t1.from(image1, {duration: 1.2, y: 1280, ease: Power3.easeOut}, 'start')
+        .from(image1.firstElementChild, {duration: 2, scale: 1.6, ease: Power3.easeOut}, .2) // .2 is how long it plays after the first .from
+        .from(image2, {duration: 1.2, y: 1280, ease: Power3.easeOut}, .2)
+        .from(image2.firstElementChild, {duration: 2, scale: 1.6, ease: Power3.easeOut}, .2);
+
+    }, []);
+
+    
 
     return (
         <div className="hero" ref={el => hero = el}>
             <div className="container">
                 <div className="hero-inner">
                     <div className="hero-content">
-                        <div className="hero-content-inner">
+                        <div className="hero-content-inner" ref={el => content = el}>
                             <h1>
                                 <div className="hero-content-line">
                                     <div className="hero-content-line-inner">Welcome</div>
