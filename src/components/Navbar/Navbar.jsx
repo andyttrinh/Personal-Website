@@ -9,7 +9,7 @@ function Navbar() {
 
     return (
         <nav className="NavbarItems">
-            <h1 className="navbar-logo">React <i className="fab fa-react"></i></h1>
+            <h1 className="navbar-logo">Trinh <i className="fab fa-react"></i></h1>
             <div className="menu-icon" onClick={() => setClicked(!clicked)}>
                 <i className={clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
             </div>
@@ -23,7 +23,9 @@ function Navbar() {
                     )
                 })}
             </ul>
-            <Button>Contact</Button>
+            <div className="outer-warp">
+                <Button className="contact-button">Contact</Button>
+            </div>
         </nav>
     )
 }

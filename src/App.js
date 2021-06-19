@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import Navbar from './components/Navbar/Navbar'
+import Navbar from './components/Navbar/Navbar';
+import Hero from './components/Hero/Hero';
 import './App.css';
 
 function App() {
@@ -8,9 +9,7 @@ function App() {
     <div className="App">
       <Router>
         <Navbar />
-        <Switch>
-          <Route path='/' exact />
-        </Switch>
+        <Hero />
       </Router>
     </div>
   );

@@ -18,5 +18,10 @@ export const MenuItems = [
         title: '日本語',
         url: "#",
         cName: 'nav-links'
+    },
+    {
+        title: 'Contact',
+        url: "#",
+        cName: 'nav-links-mobile'
     }
 ]
