@@ -1,30 +1,30 @@
-.hero {
-    visibility: hidden;
+.about {
     height: 100vh;
     font-family: 'Poppins', sans-serif;
+    background-color: #457b9d;
     .container {
         width: 1440px;
         min-width: 1440px;
         margin: 0 auto;
-        .hero-inner {
+        .about-inner {
             display: flex;
             align-items: center;
             justify-content: space-between;
             margin: 0 24px;
             height: 102vh;
-            .hero-content {
+            .about-content {
                 width: 50%;
                 height: 50vh;
-                .hero-content-inner {
+                .about-content-inner {
                     width: 400px;
                     margin: 0 auto;
-                    color: #323232;
+                    color: #f1faee;
                     // height:60vh;
                     h1 {
                         font-weight: 700;
                         font-size: 32px;
                         margin-bottom: 24px;
-                        .hero-content-line {
+                        .about-content-line {
                             margin: 0;
                             height: 44px;
                             overflow: hidden;
@@ -78,21 +78,21 @@
                     }
                 }
             }
-            .hero-images {
+            .about-images {
                 width: 50%;
                 height: 100vh;
                 position: relative;
-                .hero-images-inner {
+                .about-images-inner {
 
                 }
-                .hero-image {
+                .about-image {
                     position: absolute;
                     overflow: hidden;
+                    &.image1 {
+                        
+                    }
                     &.image2 {
-                        bottom: 200px;
-                        left: 150px;
-                        width: 52%;
-                        height: 65%;
+                        
                     }
                     img {
                         position: absolute;
@@ -108,26 +108,3 @@
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

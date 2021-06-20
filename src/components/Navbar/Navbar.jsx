@@ -24,7 +24,7 @@ function Navbar() {
                 })}
             </ul>
             <div className="outer-warp">
-                <Button className="contact-button">Contact</Button>
+                {/* <Button className="contact-button">Contact</Button> */}
             </div>
         </nav>
     )

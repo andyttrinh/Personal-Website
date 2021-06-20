@@ -38,9 +38,7 @@ function Hero() {
         const image1 = images.firstElementChild;
         const image2 = images.lastElementChild;
 
-        t1.from(image1, {duration: 1.2, y: 1280, ease: Power3.easeOut}, 'start')
-        .from(image1.firstElementChild, {duration: 2, scale: 1.6, ease: Power3.easeOut}, .2) // .2 is how long it plays after the first .from
-        .from(image2, {duration: 1.2, y: 1280, ease: Power3.easeOut}, .2)
+        t1.from(image2, {duration: 1.2, y: 1280, ease: Power3.easeOut}, .2) // .2 is how long it plays after the first .from
         .from(image2.firstElementChild, {duration: 2, scale: 1.6, ease: Power3.easeOut}, .2);
 
     }, []);
@@ -78,9 +76,6 @@ function Hero() {
                     </div>
                     <div className="hero-images">
                         <div className="hero-images-inner" ref={el => images = el}>
-                            <div className="hero-image image1">
-                                <img src={image1} alt="image1"/>
-                            </div>
                             <div className="hero-image image2">
                                 <img src={image2} alt="image2"/>
                             </div>
